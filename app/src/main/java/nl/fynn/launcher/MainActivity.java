@@ -59,20 +59,18 @@ import java.util.List;
  * pakketnamen; de eerste die op de box staat wordt gebruikt.
  */
 public class MainActivity extends Activity {
-
-    /** Een vaste plek op het startscherm. */
-    private static final class Spec {
-        final String label;
-        final String tagline;
-        final int accent;
-        final String[] pkgs;
-
-        Spec(String label, String tagline, int accent, String... pkgs) {
-            this.label = label;
-            this.tagline = tagline;
-            this.accent = accent;
-            this.pkgs = pkgs;
-        }
+private static final Spec[] APPS = {
+            new Spec("Netflix", "Series en films", 0xFFB81D24,
+                    "com.netflix.mediaclient", "com.netflix.ninja"),
+            new Spec("YouTube", "Video's en muziek", 0xFFEF2B2B,
+                    "com.google.android.youtube.tv", "com.google.android.youtube"),
+            new Spec("Videoland", "Series, films en meer", 0xFFD6154B,
+                    "nl.rtl.videoland.v2", "nl.rtl.videoland"),
+            new Spec("NPO Start", "Live en gemist", 0xFFFF6A13,
+                    "nl.uitzendinggemist", "nl.omroep.npo"),
+            new Spec("Spotify", "Muziek en podcasts", 0xFF1DB954,
+                    "com.spotify.tv.android", "com.spotify.music"),
+    };
     }
 
     private static final Spec[] APPS = {
