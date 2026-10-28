@@ -60,25 +60,27 @@ import java.util.List;
  */
 public class MainActivity extends Activity {
 
-private static final Spec[] APPS = {
-            new Spec("Netflix", "Series en films", 0xFFB81D24,
-                    "com.netflix.mediaclient"),
-            new Spec("YouTube", "Video's en muziek", 0xFFEF2B2B,
-                    "com.google.android.youtube"),
-            new Spec("Videoland", "Series, films en meer", 0xFFD6154B,
-                    "nl.rtl.videoland.v2"),
-            new Spec("NPO Start", "Live en gemist", 0xFFFF6A13,
-                    "nl.uitzendinggemist"),
-            new Spec("Spotify", "Muziek en podcasts", 0xFF1DB954,
-                    "com.spotify.music"),
-    };
+    /** Een vaste plek op het startscherm. */
+    private static final class Spec {
+        final String label;
+        final String tagline;
+        final int accent;
+        final String[] pkgs;
+
+        Spec(String label, String tagline, int accent, String... pkgs) {
+            this.label = label;
+            this.tagline = tagline;
+            this.accent = accent;
+            this.pkgs = pkgs;
+        }
     }
 
+    /** Volgorde van de apps op het startscherm. */
     private static final Spec[] APPS = {
-            new Spec("YouTube", "Video's en muziek", 0xFFEF2B2B,
-                    "com.google.android.youtube.tv"),
             new Spec("Netflix", "Series en films", 0xFFB81D24,
                     "com.netflix.mediaclient", "com.netflix.ninja"),
+            new Spec("YouTube", "Video's en muziek", 0xFFEF2B2B,
+                    "com.google.android.youtube.tv"),
             new Spec("Videoland", "Series, films en meer", 0xFFD6154B,
                     "nl.rtl.videoland.v2"),
             new Spec("NPO Start", "Live en gemist", 0xFFFF6A13,
