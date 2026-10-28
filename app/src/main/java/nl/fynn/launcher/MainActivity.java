@@ -531,9 +531,8 @@ public class MainActivity extends Activity {
         if (useCustomNetflixLogo) {
             ImageView logo = new ImageView(this);
             logo.setImageResource(customNetflixLogo);
-            logo.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            logo.setPadding(dp(18), dp(18), dp(18), dp(18));
-
+            logo.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            logo.setPadding(0, 0, 0, 0);
             parallax.addView(logo, new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
