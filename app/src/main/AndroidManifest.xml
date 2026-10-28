@@ -8,8 +8,12 @@
         android:name="android.hardware.touchscreen"
         android:required="false" />
 
-    <!-- Nodig om op Android 11+ de geinstalleerde apps te mogen zien -->
+    <!-- Nodig om op Android 11+ de vier apps te mogen zien -->
     <queries>
+        <package android:name="com.google.android.youtube.tv" />
+        <package android:name="nl.rtl.videoland.v2" />
+        <package android:name="nl.uitzendinggemist" />
+        <package android:name="com.spotify.tv.android" />
         <intent>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
